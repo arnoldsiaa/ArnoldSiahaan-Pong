@@ -28,7 +28,6 @@ public class PaddleController : MonoBehaviour
         {
             return Vector2.down * speed;
         }
-
         return Vector2.zero;
     }
 
