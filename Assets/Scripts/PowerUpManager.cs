@@ -7,6 +7,7 @@ public class PowerUpManager : MonoBehaviour
     public Transform spawnArea;
     public int maxPowerAmount;
     public int spawnInterval;
+    float counter;
     public Vector2 powerUpAreaMin;
     public Vector2 powerUpAreaMax;
     public List<GameObject> powerUpTemplateList;
@@ -23,11 +24,22 @@ public class PowerUpManager : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
+        
         if (timer > spawnInterval)
         {
             GenerateRandomPowerUp();
             timer -= spawnInterval;
         } ;
+
+        if (powerUpList.Count >= maxPowerAmount)
+        {
+            counter += Time.deltaTime;
+            if (counter >= 5)
+            {
+                RemovePowerUp(powerUpList[0]);
+                counter = 0;
+            }
+        }
     }
     public void GenerateRandomPowerUp()
     {
@@ -52,6 +64,7 @@ public class PowerUpManager : MonoBehaviour
         GameObject powerUp = Instantiate(powerUpTemplateList[randomIndex], new Vector3(position.x, position.y, powerUpTemplateList[randomIndex].transform.position.z), Quaternion.identity, spawnArea);
         powerUp.SetActive(true);
         powerUpList.Add(powerUp);
+        
     }
 
     public void RemovePowerUp(GameObject powerUp)
