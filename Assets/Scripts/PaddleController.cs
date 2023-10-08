@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PaddleController : MonoBehaviour
 {
@@ -35,5 +36,23 @@ public class PaddleController : MonoBehaviour
     {
         /*Debug.Log("TEST "+ movement);*/
         rig.velocity = movement;
+    }
+
+    public void ActivePUPaddle()
+    {
+        Vector2 newScale = transform.localScale;
+        newScale.y *= 2f;
+        transform.localScale = newScale;
+    }
+
+    public void DeactivePUPaddle()
+    {
+        Vector2 newScale = transform.localScale;
+        newScale.y /= 2f;
+        transform.localScale = newScale;
+    }
+    public void ActiveSpeedPU()
+    {
+        speed *= 2;
     }
 }

@@ -13,4 +13,12 @@ public class MainMenuController : MonoBehaviour
     {
         Debug.Log("Created By Arnold");
     }
+    public void Credit()
+    {
+        SceneManager.LoadScene("Credit");
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 }

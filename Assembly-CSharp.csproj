@@ -64,6 +64,8 @@
     <Compile Include="Assets\Scripts\BallController.cs" />
     <Compile Include="Assets\Scripts\PowerUpManager.cs" />
     <Compile Include="Assets\Scripts\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\PUPaddleSizeController.cs" />
+    <Compile Include="Assets\Scripts\PUPaddleSpeedController.cs" />
     <Compile Include="Assets\Scripts\PUSpeedUpController.cs" />
     <Compile Include="Assets\Scripts\PaddleController.cs" />
   </ItemGroup>
